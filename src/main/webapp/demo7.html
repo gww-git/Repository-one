@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+
+  <!--注意，标签属性的赋值是不能使用插值表达式的，标签属性的取值使用  v-bind  当然也可以简写成英文状态下的冒号-->
+   <div id="app">
+       <font size="6" v-bind:color="f1">lalalal</font>
+       <font size="6" :color="f2">hehheh</font>
+   </div>
+</body>
+  <script>
+
+     new Vue({
+        el:"#app",
+        data:{
+            f1:"red",
+            f2:"green"
+        }
+       });
+
+  </script>
+
+
+</html>

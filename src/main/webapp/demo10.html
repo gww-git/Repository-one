@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>     <!--   v-model 获取类似json，数组这样得值  -->
+
+ <div id="app">
+   <form action="http://baidu.com" method="post">
+    <input type="text" name="user" v-model:value="user.name"></form><br>
+    <input type="text" name="password" v-model:value="user.password">
+</form>
+</div>
+</body>
+
+     <script>
+      new Vue({
+         el:"#app",
+         data:{
+             user:{
+                 name:"xiaox",
+                 password:"1236"
+             }
+         }
+      })
+</script>
+
+</html>

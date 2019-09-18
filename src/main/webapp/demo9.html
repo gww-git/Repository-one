@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+
+        <!--   v-for操作数组  -->
+
+    <div id="app">
+
+         <ul>
+         <li v-for="(item,index) in list">{{index}}:{{item}}</li>
+        </ul>
+
+   <hr>
+     <!--操作对象-->
+
+     <ul><li v-for="(key,value) in product">{{value}}:{{key}}</li></ul>
+
+  <hr>
+    <!--json数据-->
+    <table><tr>
+    <td>序号</td>
+    <td>姓名</td>
+    <td>年龄</td>
+</tr>
+       <tr v-for="(product,index) in products">
+            <td>{{index}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.age}}</td>
+</tr>
+</table>
+</div>
+</body>
+
+   <script>
+
+     new Vue({
+       el:"#app",
+       data:{
+           list:[33,44,55,88],
+           product:{
+               name:"xiaoxiao",
+               age:"18",
+               role:"Student"
+           },
+
+           <!--json数据-->
+           products:[
+               {name:"xiaoxiao",age:"16"},
+               {name:"hehe",age:"19"},
+               {name:"keke",age:"18"}
+           ]
+
+       }
+     })
+
+   </script>
+
+</html>

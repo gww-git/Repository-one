@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+      <div id="div1"></div>
+      <div id="div2"></div>
+      <hr>
+      <!--vue的方式-->
+      <div v-html="mess" id="div3"></div>
+      <div v-text="mess" id="div4"></div>
+  </div>
+</body>
+    <script>
+      window.onload=function() {
+
+      document.getElementById("div1").innerHTML="<h1>hello</h1>";  <!--可以被解析，输出hello-->
+      document.getElementById("div2").innerText="<h1>hello</h1>";  <!--不能被解析，引号里面的全部输出-->
+
+      }
+
+      new Vue({
+         el:"#app",
+         data:{
+             mess:"<h1>hello</h1>"
+         }
+      });
+
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

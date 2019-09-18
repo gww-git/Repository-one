@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/vue.js"></script>
+</head>
+<body> <!--事件修饰符-->
+
+  <form action="http://baidu.com" method="post" onsubmit="return fun1()"> <!--由于表单有默认的提交，所以可以使用表单事件，注意，要写return-->
+    <input type="submit" value="提交">
+</form>
+
+   <!--vue,   下面的@submit.prevent是阻止事件的默认行为，还有一个stop是阻止事件的传播行为，本来是js的方法，再vue里面，将他们弄成了属性，作用一样的-->
+  <form action="http://baidu.com" method="post" @submit.prevent id="app">
+          <input type="submit" value="vue提交">
+  </form>
+</body>
+
+    <script>
+
+      function fun1(){
+           return false;
+       }
+
+       new Vue({
+         el:"#app"
+       });
+    </script>
+
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/vue.js"></script>
+
+   <style>
+       #div,#div1{
+          background-color: pink;
+          width: 300px;
+          height: 300px;
+       }
+       #div1{
+         margin-left: 400px;
+       }
+   </style>
+
+</head>
+<body>
+
+  <div id="app">
+        <!--这些事鼠标移动事件-->
+     <div onmouseover="divseover()" id="div">
+         <textarea onmouseover="textareaseover()">文件域</textarea>
+         传统
+     </div>
+
+      <div @mouseover="fun1()" id="div1">
+          <textarea @mouseover="fun2()">文件域</textarea>
+          vue
+      </div>
+      <!--一般的htmol不支持v-on的书写格式，会变红色，但仍然可以用，  v-on  可以使用@来代替，是一样的效果-->
+
+  </div>
+</body>
+   
+   <script>
+    <!--传统js-->
+      function divseover() {
+        alert("div上面");
+      }
+     function textareaseover() {     <!--由于改文本域在div里面，所以就算触发了移动事件，也会触发div的移动事件-->
+       alert("textarea上面");
+        event.stopPropagation();   <!--终止事件的传播，也就是触发了当前事件，不会再触发div的鼠标移动事件了-->
+     }
+
+     <!--vue-->
+     new Vue({
+       el:"#app",
+       methods:{
+           fun1:function() {
+             alert("这是div");
+           },
+           fun2:function(){
+             alert("这是textarea");
+             event.stopPropagation();  <!--终止事件的1传播-->
+           }
+       }
+     });
+
+   </script>
+  
+</html>

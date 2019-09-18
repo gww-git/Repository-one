@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/vue.js"></script>
+</head>
+<body >   <!--按键修饰符  ,enter代表的是空格键，表示按下空格就会触发该事件-->
+   <div id="app">
+   vue:<input type="text" v-on:keydown.enter="fun"/>
+    </div>
+</body>
+
+   <script>
+
+      new Vue({
+        el:"#app",
+        methods:{
+            fun:function() {
+              alert("按下的是回车");
+            }
+        }
+      });
+
+   </script>
+
+</html>

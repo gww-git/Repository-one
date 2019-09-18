@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+   <!--插值表达式只能包含单个表达式，且必须是表达式，不是语句，,不支持变量声明，三元运算符也可以，数学运算可以-->
+
+  <div id="app">
+    {{message}}  <!--vue的插值表达式 ,把data中定义的数据显示在这里-->
+    {{aa ? "ok" : "no"}}
+    {{number}}
+    {{number*10}}
+</div>
+</body>
+<script>
+   //创建vue对象
+    new Vue({
+           el:"#app",   //由vue接管为app区域
+           data:{
+               message:"hello,vue",
+               number:999
+           }
+    });
+
+</script>
+</html>
